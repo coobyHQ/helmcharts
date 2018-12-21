@@ -53,20 +53,12 @@ The following table lists the configurable parameters of the Odoo chart and thei
 |---------------------------------------|-------------------------------------------------------------|------------------------------------------------|
 | `global.imageRegistry`                | Global Docker image registry                                | `nil`                                          |
 | `image.registry`                      | Odoo image registry                                         | `docker.io`                                    |
-| `image.repository`                    | Odoo Image name                                             | `bitnami/odoo`                                 |
+| `image.repository`                    | Odoo Image name                                             | `coobytec/odoo-base`                                 |
 | `image.tag`                           | Odoo Image tag                                              | `{VERSION}`                                    |
 | `image.pullPolicy`                    | Image pull policy                                           | `Always`                                       |
 | `image.pullSecrets`                   | Specify image pull secrets                                  | `nil`                                          |
-| `odooUsername`                        | User of the application                                     | `user@example.com`                             |
-| `odooPassword`                        | Admin account password                                      | _random 10 character long alphanumeric string_ |
-| `odooEmail`                           | Admin account email                                         | `user@example.com`                             |
-| `smtpHost`                            | SMTP host                                                   | `nil`                                          |
-| `smtpPort`                            | SMTP port                                                   | `nil`                                          |
-| `smtpUser`                            | SMTP user                                                   | `nil`                                          |
-| `smtpPassword`                        | SMTP password                                               | `nil`                                          |
-| `smtpProtocol`                        | SMTP protocol [`ssl`, `tls`]                                | `nil`                                          |
 | `service.type`                        | Kubernetes Service type                                     | `LoadBalancer`                                 |
-| `service.port`                    | Service HTTP port                    | `80`                                          |
+| `service.port`                        | Service HTTP port                                           | `80`                                          |
 | `service.loadBalancer`                | Kubernetes LoadBalancerIP to request                        | `nil`                                          |
 | `service.externalTrafficPolicy`       | Enable client source IP preservation                        | `Cluster`                                      |
 | `service.nodePort`                    | Kubernetes http node port                                   | `""`                                           |
@@ -81,12 +73,12 @@ The following table lists the configurable parameters of the Odoo chart and thei
 | `ingress.secrets[0].certificate`      | TLS Secret Certificate                                      | `nil`                                          |
 | `ingress.secrets[0].key`              | TLS Secret Key                                              | `nil`                                          |
 | `resources`                           | CPU/Memory resource requests/limits                         | Memory: `512Mi`, CPU: `300m`                   |
-| `persistence.storageClass`            | PVC Storage Class                                           | `nil` (uses alpha storage class annotation)    |
+| `persistence.storageClass`            | PVC Storage Class                                           | `openebs-jiva-default` (uses alpha storage class annotation)    |
 | `persistence.accessMode`              | PVC Access Mode                                             | `ReadWriteOnce`                                |
 | `persistence.size`                    | PVC Storage Request                                         | `8Gi`                                          |
 | `postgresql.postgresqlPassword`       | PostgreSQL password                                         | `nil`                                          |
 | `postgresql.persistence.enabled`      | Enable PostgreSQL persistence using PVC                     | `true`                                         |
-| `postgresql.persistence.storageClass` | PVC Storage Class for PostgreSQL volume                     | `nil` (uses alpha storage class annotation)    |
+| `postgresql.persistence.storageClass` | PVC Storage Class for PostgreSQL volume                     | `openebs-jiva-default` (uses alpha storage class annotation)    |
 | `postgresql.persistence.accessMode`   | PVC Access Mode for PostgreSQL volume                       | `ReadWriteOnce`                                |
 | `postgresql.persistence.size`         | PVC Storage Request for PostgreSQL volume                   | `8Gi`                                          |
 | `livenessProbe.enabled`               | Enable/disable the liveness probe                           | `true`                                         |
@@ -102,7 +94,7 @@ The following table lists the configurable parameters of the Odoo chart and thei
 | `readinessProbe.failureThreshold`     | Minimum consecutive failures to be considered failed        | 6                                              |
 | `readinessProbe.successThreshold`     | Minimum consecutive successes to be considered successful   | 1                                              |
 
-The above parameters map to the env variables defined in [bitnami/odoo](http://github.com/bitnami/bitnami-docker-odoo). For more information please refer to the [bitnami/odoo](http://github.com/bitnami/bitnami-docker-odoo) image documentation.
+The above parameters map to the env variables defined in [coobytec/odoo-base](http://github.com/coobyHQ/cooby-docker-odoo-base). For more information please refer to the [coobytec/odoo-base](http://github.com/coobyHQ/cooby-docker-odoo-base) image documentation.
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
@@ -124,7 +116,7 @@ $ helm install --name my-release -f values.yaml stable/odoo
 
 ## Persistence
 
-The [Cooby Odoo](https://github.com/coobyHQ/cooby-docker-odoo-base) image stores the Odoo data and configurations at the `/bitnami/odoo` path of the container.
+The [Cooby Odoo](https://github.com/coobyHQ/cooby-docker-odoo-base) image stores the Odoo data and configurations at the `/coobytec/odoo-base` path of the container.
 
 Persistent Volume Claims are used to keep the data across deployments. This is known to work in GCE, AWS, and minikube.
 See the [Configuration](#configuration) section to configure the PVC or to disable persistence.

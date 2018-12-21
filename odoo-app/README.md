@@ -15,7 +15,7 @@ $ helm install stable/odoo-base
 
 ## Introduction
 
-This chart bootstraps a [Odoo](https://github.com/coobyHQ/cooby-docker-odoo-base) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart bootstraps a [Odoo](https://github.com/coobyHQ/cooby-docker-odoo-app) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 Bitnami charts can be used with [Kubeapps](https://kubeapps.com/) for deployment and management of Helm Charts in clusters.
 
@@ -54,11 +54,11 @@ The following table lists the configurable parameters of the Odoo chart and thei
 |---------------------------------------|-------------------------------------------------------------|------------------------------------------------|
 | `global.imageRegistry`                | Global Docker image registry                                | `nil`                                          |
 | `image.registry`                      | Odoo image registry                                         | `docker.io`                                    |
-| `image.repository`                    | Odoo Image name                                             | `bitnami/odoo`                                 |
+| `image.repository`                    | Odoo Image name                                             | `coobytec/odoo-app`                            |
 | `image.tag`                           | Odoo Image tag                                              | `{VERSION}`                                    |
 | `image.pullPolicy`                    | Image pull policy                                           | `Always`                                       |
 | `image.pullSecrets`                   | Specify image pull secrets                                  | `nil`                                          |
-| `odooUsername`                        | User of the application                                     | `user@example.com`                             |
+| `odooUsername`                        | User of the application                                     | `superadmin`                             |
 | `odooPassword`                        | Admin account password                                      | _random 10 character long alphanumeric string_ |
 | `odooEmail`                           | Admin account email                                         | `user@example.com`                             |
 | `smtpHost`                            | SMTP host                                                   | `nil`                                          |
@@ -86,10 +86,6 @@ The following table lists the configurable parameters of the Odoo chart and thei
 | `persistence.accessMode`              | PVC Access Mode                                             | `ReadWriteOnce`                                |
 | `persistence.size`                    | PVC Storage Request                                         | `8Gi`                                          |
 | `postgresql.postgresqlPassword`       | PostgreSQL password                                         | `nil`                                          |
-| `postgresql.persistence.enabled`      | Enable PostgreSQL persistence using PVC                     | `true`                                         |
-| `postgresql.persistence.storageClass` | PVC Storage Class for PostgreSQL volume                     | `nil` (uses alpha storage class annotation)    |
-| `postgresql.persistence.accessMode`   | PVC Access Mode for PostgreSQL volume                       | `ReadWriteOnce`                                |
-| `postgresql.persistence.size`         | PVC Storage Request for PostgreSQL volume                   | `8Gi`                                          |
 | `livenessProbe.enabled`               | Enable/disable the liveness probe                           | `true`                                         |
 | `livenessProbe.initialDelaySeconds`   | Delay before liveness probe is initiated                    | 300                                            |
 | `livenessProbe.periodSeconds`         | How often to perform the probe                              | 30                                             |
@@ -103,7 +99,7 @@ The following table lists the configurable parameters of the Odoo chart and thei
 | `readinessProbe.failureThreshold`     | Minimum consecutive failures to be considered failed        | 6                                              |
 | `readinessProbe.successThreshold`     | Minimum consecutive successes to be considered successful   | 1                                              |
 
-The above parameters map to the env variables defined in [bitnami/odoo](http://github.com/bitnami/bitnami-docker-odoo). For more information please refer to the [bitnami/odoo](http://github.com/bitnami/bitnami-docker-odoo) image documentation.
+The above parameters map to the env variables defined in [coobytec/odoo-app](http://github.com/coobyHQ/cooby-docker-odoo-app). For more information please refer to the [coobytec/odoo-app](http://github.com/coobyHQ/cooby-docker-odoo-app) image documentation.
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
@@ -125,7 +121,7 @@ $ helm install --name my-release -f values.yaml stable/odoo
 
 ## Persistence
 
-The [Cooby Odoo](https://github.com/coobyHQ/cooby-docker-odoo-base) image stores the Odoo data and configurations at the `/bitnami/odoo` path of the container.
+The [Cooby Odoo](https://github.com/coobyHQ/cooby-docker-odoo-base) image stores the Odoo data and configurations at the `/coobytec/odoo-app` path of the container.
 
 Persistent Volume Claims are used to keep the data across deployments. This is known to work in GCE, AWS, and minikube.
 See the [Configuration](#configuration) section to configure the PVC or to disable persistence.
