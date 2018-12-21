@@ -2,9 +2,8 @@
 
 
 ## Cooby charts
-- [Odoo Base](https://github.com/helm/charts/tree/master/stable/odoo)
-
-
+- [Odoo Base](https://github.com/coobyHQ/helmcharts/tree/master/odoo-base)
+- [Odoo App](https://github.com/coobyHQ/helmcharts/tree/master/odoo-app)
 
 ## Before you begin
 
