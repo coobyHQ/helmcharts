@@ -73,12 +73,12 @@ The following table lists the configurable parameters of the Odoo chart and thei
 | `ingress.secrets[0].certificate`      | TLS Secret Certificate                                      | `nil`                                          |
 | `ingress.secrets[0].key`              | TLS Secret Key                                              | `nil`                                          |
 | `resources`                           | CPU/Memory resource requests/limits                         | Memory: `512Mi`, CPU: `300m`                   |
-| `persistence.storageClass`            | PVC Storage Class                                           | `openebs-jiva-default` (uses alpha storage class annotation)    |
+| `persistence.storageClass`            | PVC Storage Class                                           | `openebs-jiva-default`                         |
 | `persistence.accessMode`              | PVC Access Mode                                             | `ReadWriteOnce`                                |
 | `persistence.size`                    | PVC Storage Request                                         | `8Gi`                                          |
 | `postgresql.postgresqlPassword`       | PostgreSQL password                                         | `nil`                                          |
 | `postgresql.persistence.enabled`      | Enable PostgreSQL persistence using PVC                     | `true`                                         |
-| `postgresql.persistence.storageClass` | PVC Storage Class for PostgreSQL volume                     | `openebs-jiva-default` (uses alpha storage class annotation)    |
+| `postgresql.persistence.storageClass` | PVC Storage Class for PostgreSQL volume                     | `openebs-jiva-default`                         |
 | `postgresql.persistence.accessMode`   | PVC Access Mode for PostgreSQL volume                       | `ReadWriteOnce`                                |
 | `postgresql.persistence.size`         | PVC Storage Request for PostgreSQL volume                   | `8Gi`                                          |
 | `livenessProbe.enabled`               | Enable/disable the liveness probe                           | `true`                                         |

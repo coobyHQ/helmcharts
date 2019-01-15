@@ -58,7 +58,7 @@ The following table lists the configurable parameters of the Odoo chart and thei
 | `image.tag`                           | Odoo Image tag                                              | `{VERSION}`                                    |
 | `image.pullPolicy`                    | Image pull policy                                           | `Always`                                       |
 | `image.pullSecrets`                   | Specify image pull secrets                                  | `nil`                                          |
-| `odooUsername`                        | User of the application                                     | `superadmin`                             |
+| `odooUsername`                        | User of the application                                     | `superadmin`                                   |
 | `odooPassword`                        | Admin account password                                      | _random 10 character long alphanumeric string_ |
 | `odooEmail`                           | Admin account email                                         | `user@example.com`                             |
 | `smtpHost`                            | SMTP host                                                   | `nil`                                          |
@@ -67,7 +67,7 @@ The following table lists the configurable parameters of the Odoo chart and thei
 | `smtpPassword`                        | SMTP password                                               | `nil`                                          |
 | `smtpProtocol`                        | SMTP protocol [`ssl`, `tls`]                                | `nil`                                          |
 | `service.type`                        | Kubernetes Service type                                     | `LoadBalancer`                                 |
-| `service.port`                    | Service HTTP port                    | `80`                                          |
+| `service.port`                        | Service HTTP port                                           | `80`                                           |
 | `service.loadBalancer`                | Kubernetes LoadBalancerIP to request                        | `nil`                                          |
 | `service.externalTrafficPolicy`       | Enable client source IP preservation                        | `Cluster`                                      |
 | `service.nodePort`                    | Kubernetes http node port                                   | `""`                                           |
@@ -82,10 +82,11 @@ The following table lists the configurable parameters of the Odoo chart and thei
 | `ingress.secrets[0].certificate`      | TLS Secret Certificate                                      | `nil`                                          |
 | `ingress.secrets[0].key`              | TLS Secret Key                                              | `nil`                                          |
 | `resources`                           | CPU/Memory resource requests/limits                         | Memory: `512Mi`, CPU: `300m`                   |
-| `persistence.storageClass`            | PVC Storage Class                                           | `nil` (uses alpha storage class annotation)    |
+| `persistence.storageClass`            | PVC Storage Class                                           | `openebs-jiva-default`                         |
 | `persistence.accessMode`              | PVC Access Mode                                             | `ReadWriteOnce`                                |
 | `persistence.size`                    | PVC Storage Request                                         | `8Gi`                                          |
 | `postgresql.postgresqlPassword`       | PostgreSQL password                                         | `nil`                                          |
+| `db_maxconn`                          | Maximum number of physical connections to posgresql         | `500`                                          |
 | `livenessProbe.enabled`               | Enable/disable the liveness probe                           | `true`                                         |
 | `livenessProbe.initialDelaySeconds`   | Delay before liveness probe is initiated                    | 300                                            |
 | `livenessProbe.periodSeconds`         | How often to perform the probe                              | 30                                             |
