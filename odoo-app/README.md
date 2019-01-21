@@ -66,6 +66,20 @@ The following table lists the configurable parameters of the Odoo chart and thei
 | `smtpUser`                            | SMTP user                                                   | `nil`                                          |
 | `smtpPassword`                        | SMTP password                                               | `nil`                                          |
 | `smtpProtocol`                        | SMTP protocol [`ssl`, `tls`]                                | `nil`                                          |
+| `addons.1`                            | Odoo addons folder name                                     | `ap`                                           |
+| `addons.2`                            | Odoo addons folder name                                     | `free1`                                        |
+| `addons.3`                            | Odoo addons folder name                                     | `free2`                                        |
+| `addons.4`                            | Odoo addons folder name                                     | `free3`                                        |
+| `addons.5`                            | Odoo addons folder name                                     | `muk`                                          |
+| `addons.6`                            | Odoo addons folder name                                     | `paid`                                         |
+| `addons.7`                            | Odoo addons folder name                                     | `saas`                                         |
+| `addons.8`                            | Odoo addons folder name                                     | `test`                                         |
+| `addons.theme1`                       | Odoo addons Theme folder name                               | `themes`                                       |
+| `addons.theme2`                       | Odoo addons Theme folder name                               | `themes_paid`                                  |
+| `odooDebuglevel`                      | Odoo Debug level [`info`, `debug`]                          | `info`                                         |
+| `odooListDB`                          | Odoo List DB in DB Manager [`False`, `True`]                | `False`                                        |
+| `odooServerWideModules`               | Odoo List of server_wide_modules (web, module-x)            | `web`                                          |
+| `odooDBfilter`                        | Odoo dbfilter [`.*`, ` ^%d$`, `%h$`]                        | `.*`                                           |
 | `service.type`                        | Kubernetes Service type                                     | `LoadBalancer`                                 |
 | `service.port`                        | Service HTTP port                                           | `80`                                           |
 | `service.loadBalancer`                | Kubernetes LoadBalancerIP to request                        | `nil`                                          |
