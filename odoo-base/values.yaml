@@ -4,13 +4,13 @@
 # global:
 #   imageRegistry:
 
-## Cooby tec Odoo image version
-## ref: https://hub.docker.com/r/coobytec/odoo-app/tags/
+## Bitnami Odoo image version
+## ref: https://hub.docker.com/r/bitnami/odoo/tags/
 ##
 image:
   registry: docker.io
-  repository: coobytec/odoo-base
-  tag: 11.0.20181215
+  repository: bitnami/odoo
+  tag: 11.0.20190215
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -24,23 +24,23 @@ image:
   #   - myRegistrKeySecretName
 
 ## User of the application
-## ref: https://github.com/coobyHQ/cooby-docker-odoo-base#configuration
+## ref: https://github.com/bitnami/bitnami-docker-odoo#configuration
 ##
 odooUsername: user@example.com
 
 ## Admin email
-## ref: https://github.com/coobyHQ/cooby-docker-odoo-base#configuration
+## ref: https://github.com/bitnami/bitnami-docker-odoo#configuration
 ##
 odooEmail: user@example.com
 
 ## Application password
 ## Defaults to a random 10-character alphanumeric string if not set
-## ref: https://github.com/coobyHQ/cooby-docker-odoo-base#configuration
+## ref: https://github.com/bitnami/bitnami-docker-odoo#configuration
 ##
 # odooPassword:
 
 ## SMTP mail delivery configuration
-## ref: https://github.com/coobyHQ/cooby-docker-odoo-base/#smtp-configuration
+## ref: https://github.com/bitnami/bitnami-docker-odoo/#smtp-configuration
 # smtpHost:
 # smtpPort:
 # smtpUser:

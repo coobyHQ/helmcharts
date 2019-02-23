@@ -99,16 +99,11 @@ spec:
         volumeMounts:
         - name: odoo-data
           mountPath: /bitnami/odoo
-        - name: odoo-addons
-          mountPath: "/opt/odoo/custom/addons"
       volumes:
       - name: odoo-data
       {{- if .Values.persistence.enabled }}
         persistentVolumeClaim:
           claimName: {{ template "odoo.fullname" . }}
-      - name: odoo-addons
-        persistentVolumeClaim:
-          claimName: openebs-nfs 
       {{- else }}
         emptyDir: {}
       {{- end }}
