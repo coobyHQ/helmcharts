@@ -1,9 +1,14 @@
 # The Cooby Library for Kubernetes
 
+Forked from https://github.com/helm/charts/tree/master/stable/odoo
+The Bitnami chart is enriched by several mor libraries to run more custom modules on Odoo.
+The version odoo-cooby creates a all-in-one Odoo pod as the one from Bitnami does.
+The version odoo-app creates only Odoo pod which holds the Odoo application server.
+You need an external postgres pod to use it.
 
 ## Cooby charts
-- [Odoo Base](https://github.com/coobyHQ/helmcharts/tree/master/odoo-base)
-- [Odoo App](https://github.com/coobyHQ/helmcharts/tree/master/odoo-app)
+- [Odoo Cooby version](https://github.com/coobyHQ/helmcharts/tree/master/odoo-cooby)
+- [Odoo App (only)](https://github.com/coobyHQ/helmcharts/tree/master/odoo-app)
 
 ## Before you begin
 
